@@ -1,0 +1,63 @@
+
+Md.Sultan Mahmud 
+ Mahmum_it
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #084727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+#page_awrp {
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    background-color:#144E76;
+    border-radius: 10px;
+}
+
+#page_awrp h1, #page_awrp h2 {
+    margin-bottom: 20px;
+}
+
+/* ইনপুট বক্সের জন্য সিএসএস (সাদা ব্যাকগ্রাউন্ড) */
+input[type="number"], 
+input[type="text"] {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: #C2E7FF;
+    color: #333333;
+    outline: none;
+    margin-right: 10px;
+}
+
+/* সাবমিট বাটনের জন্য আলাদা সিএসএস (সবুজ ব্যাকগ্রাউন্ড) */
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* বাটন হভার ইফেক্ট */
+input[type="submit"]:hover {
+    background-color: #25D366;
+}
