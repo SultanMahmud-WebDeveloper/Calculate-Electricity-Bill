@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="utf-8">
+    <title>Calculate Electricity Bill</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="page_awrp">
+        <h2>MD. SULTAN MAHMUD</h2>
+        <h2>Roll NO-70</h2>
+
+        <h3>Calculate Electricity Bill</h3> <br>
+        
+        <form id="coll" onsubmit="calculateBill(event)">
+            <input type="number" id="units" placeholder="please Enter number of units" required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateBill(event) {
+            event.preventDefault();
+            let units = parseFloat(document.getElementById('units').value);
+            let bill = 0;
+
+            const unitCostFirst = 7.50;
+            const unitCostSecond = 8.50;
+            const unitCostThird = 10.50;
+            const unitCostFourth = 12.50;
+
+            if (units <= 50) {
+                bill = units * unitCostFirst;
+            } else if (units > 50 && units <= 150) {
+                let temp = 50 * unitCostFirst;
+                let remainingUnits = units - 50;
+                bill = temp + (remainingUnits * unitCostSecond);
+            } else if (units > 150 && units <= 250) {
+                let temp = (50 * unitCostFirst) + (100 * unitCostSecond);
+                let remainingUnits = units - 150;
+                bill = temp + (remainingUnits * unitCostThird);
+            } else {
+                let temp = (50 * unitCostFirst) + (100 * unitCostSecond) + (100 * unitCostThird);
+                let remainingUnits = units - 250;
+                bill = temp + (remainingUnits * unitCostFourth);
+            }
+
+            document.getElementById('result').innerText = `Total amount of ${units} - ${bill.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
